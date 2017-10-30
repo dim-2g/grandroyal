@@ -1,0 +1,94 @@
+@import 'modules/variables';
+@import 'skeleton/skeleton';
+/*@import 'sprites/sprite';*/
+//@import 'modules/common';
+//@import 'modules/page';
+
+
+.category{
+   &__health{
+     width: 50%;
+   }
+}
+.header{
+  &__inside{
+    position: relative;
+    z-index: 2;
+  }
+  &-title{
+    font-weight: bold;
+    font-size: 72px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0px 1px #333;
+  }
+}
+.contacts{
+  *{
+    line-height: 120%;
+  }
+  &__left{
+    width: 50%;
+  }
+  &__right{
+    width: 50%;
+  }
+  &__header {
+    background: transparent url('/assets/template/img/contacts/header__bg.jpg') center top no-repeat;
+    background-size: cover;
+    height: 789px;
+    padding: 120px 0px;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000;
+      opacity: 0.48;
+      content: "";
+      z-index: 1;
+    }
+  }
+  &__caption{
+    font-weight:300;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  &__address{
+    width: 46%;
+  }
+  &__phone{
+    width: 27%;
+  }
+  &__email{
+    width: 27%;
+  }
+  &__subcaption{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    @media($bp-larger-than-1500){
+      font-size: 24px;
+    }
+  }
+  &__value{
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    @media($bp-larger-than-1500) {
+      font-size: 14px;
+    }
+    a{
+      color: #fff;
+    }
+  }
+  &__phone-number{
+    font-size: 18px;
+    @media($bp-larger-than-1500) {
+      font-size: 24px;
+    }
+  }
+}
