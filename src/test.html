@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Главная</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/template/css/main.css">
+    <script src="../vendor/sticky-sidebar.js"></script>
+</head>
+<body>
+
+
+<nav class="c-nav" data-module="Nav">
+    <div class="c-nav_background"></div>
+    <div class="c-nav_list-wrap o-scroll" data-scrollbar>
+        <ul class="c-nav_list" data-module="Dropdown">
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">О компании</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item -dropdown js-dropdown">
+                <div class="c-nav_link js-nav-link js-dropdown-toggle" data-section="a-propos-de-pomerleau">
+                    <span class="c-nav_link_text">Продукция</span>
+                    <span class="c-nav_link_line"></span>
+                </div>
+                <div class="c-nav_dropdown js-dropdown-list">
+                    <div class="c-nav_dropdown_wrap">
+                        <ul class="c-nav_dropdown_list">
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Похудение</a>
+                            </li>
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Косметика</a>
+                            </li>
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Здоровье</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Партнерам</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">События</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Обучение</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Контакты</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="c-nav_search" data-module="Search">
+        <div class="o-scroll" data-scrollbar>
+            <div class="c-search">
+                <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
+                <div class="c-search_results js-search-results">
+                    {{#displaySearchResults}}
+
+                    {{#hasProjects}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Projets <span class="c-search_number">({{projects.length}})</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#projects}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                </a>
+                            </li>
+                            {{/projects}}
+                        </ul>
+                    </section>
+                    {{/hasProjects}}
+
+
+                    {{#hasNews}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Articles <span class="c-search_number">{{news.length}}</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#news}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                </a>
+                            </li>
+                            {{/news}}
+                        </ul>
+                    </section>
+                    {{/hasNews}}
+
+                    {{#hasSections}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Pages <span class="c-search_number">{{sections.length}}</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#sections}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                    <div class="s-wysiwyg">
+                                        <p>{{description}}</p>
+                                    </div>
+                                </a>
+                            </li>
+                            {{/sections}}
+                        </ul>
+                    </section>
+                    {{/hasSections}}
+
+                    {{/displaySearchResults}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <aside class="c-nav_aside">
+        <ul class="c-nav_social">
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-vk"></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</nav>
+
+<div class="header wow">
+    <div class="logo">
+        <a href="/">
+            <img src="/assets/images/logo.png" alt="">
+        </a>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="sidebar" class="wow">
+        <div class="sidebar__inner">
+            <button class="c-nav-button nav-toggle">
+                <div class="c-nav-button_wrap">
+                    <div class="c-nav-button_icon">
+                        <span class="c-nav-button_line"></span>
+                        <span class="c-nav-button_line"></span>
+                        <span class="c-nav-button_line"></span>
+                    </div>
+                </div>
+            </button>
+            <div class="aside-nav">
+                <ul>
+                    <li><a class="menu-21" href="#">О компании</a></li>
+                    <li><a class="menu-22" href="#">Здоровье</a></li>
+                    <li><a class="menu-23" href="#">Косметика</a></li>
+                    <li><a class="menu-24" href="#">Похудение</a></li>
+                    <li><a class="menu-25" href="#">Партнерам</a></li>
+                    <li><a class="menu-26" href="#">События</a></li>
+                    <li><a class="menu-27" href="#">Обучение</a></li>
+                    <li><a class="menu-28" href="#">Вопросы</a></li>
+                    <li><a class="menu-29" href="#">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="row">
+            <p>331111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+            <p>1111111111</p>
+
+
+
+        </div>
+    </div>
+</div>
+<footer class="c-footer">
+    <div class="">
+        <div class="row">
+            <div class="c-footer__left columns">
+                <img class="bottom-logo" src="/assets/images/logo-white.png" alt="">
+                <div class="copyright">
+                    Copyright 2017 · All rights reserved
+                </div>
+            </div>
+            <div class="c-footer__right columns">
+                <div class="footer__menu">
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Продукция</a>
+                            <ul>
+                                <li><a href="#">Похудение</a></li>
+                                <li><a href="#">Косметика</a></li>
+                                <li><a href="#">Здоровье</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li><a href="#">События</a></li>
+                        <li><a href="#">Обучение</a>
+                            <ul>
+                                <li><a href="#">Семинары</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Вопросы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<script src="assets/template/vendor/jquery-3.2.1.min.js"></script>
+<script src="assets/template/vendor/wow.min.js"></script>
+<script src="assets/template/vendor/sticky-sidebar.js"></script>
+<script src="assets/template/js/scripts.js"></script>
+</body>
+</html>

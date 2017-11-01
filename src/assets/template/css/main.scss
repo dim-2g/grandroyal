@@ -2,9 +2,110 @@
 @import 'skeleton/skeleton';
 /*@import 'sprites/sprite';*/
 //@import 'modules/common';
+//@import 'modules/sidebar';
 //@import 'modules/page';
+@import '/css/main.css';
+@import '/css/custom.css';
+
+body{
+  font-size: 14px;
+  line-height: 120%;
+}
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.animated{
+  .aside-nav {
+    transform: translateX(0);
+  }
+  .c-nav-button {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    transition-delay: 1.05s;
+  }
+}
+.c-nav-button{
+  //position: relative;
+}
+.has-nav-open{
+  .c-nav-button{
+    //position: fixed;
+    //z-index: 500;
+  }
+  .aside-nav {
+    z-index: 0;
+  }
+}
+.header{
+  width: 350px;
+  height: 120px;
+  background-color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 120px;
+  top: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 1.2s;
+  transform: translateY(-100%);
+  &.animated{
+    transform: translateY(0);
+  }
+}
+.c-footer{
+  &__left{
+    width: 33%;
+  }
+  &__right{
+    width: 67%;
+  }
+}
 
 
+.wrapper{
+  padding: 10px 10px 10px 120px;
+  position: relative;
+  background: #f6f6f6;
+}
+.footer{
+  background-color: red;
+  padding: 40px 10px;
+}
+#sidebar{
+  float: left;
+  width: 120px;
+  color: #ffbdbd;
+  will-change: min-height;
+}
+.nav-button{
+  width: 120px;
+  height: 120px;
+  background: $blue;
+  border: 0 none;
+
+}
+#content{
+  padding: 18px;
+  margin-left: 120px;
+  min-height: 2000px;
+  color: darkgrey;
+}
+.sidebar{
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  bottom: 0;
+  border: 1px blue solid;
+}
+.c-footer{
+  position: relative;
+  z-index: 905;
+}
 .category{
    &__health{
      width: 50%;

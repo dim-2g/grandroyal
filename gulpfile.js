@@ -93,6 +93,7 @@ gulp.task('clean', function() {
 // Компиляция sass, сборка стилей
 // development
 gulp.task('sass:dev', function() {
+    console.log(path.src.css);
     return gulp.src(path.src.sass)
         .pipe(plumber())
         .pipe(sourcemaps.init())
