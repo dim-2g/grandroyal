@@ -525,7 +525,7 @@ button:hover, .c-header-filters_button:hover,
 html {
   color: #1e1e22;
   font-family: "Roboto", sans-serif;
-  line-height: 1.6;
+  line-height: 1.2;
   background-color: #f6f6f6;
   height: 100%;
 }
@@ -615,12 +615,12 @@ img, svg {
 }
 
 a, .o-link {
-  color: #1a0dab;
+  color: #76a9bc;
   transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a:hover, .o-link:hover {
-  color: #13097c;
+  /*color: #13097c;*/
 }
 
 a.-normal, .o-link.-normal {

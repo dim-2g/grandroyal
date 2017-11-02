@@ -1,264 +1,90 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Главная</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/template/css/main.css">
-    <script src="../vendor/sticky-sidebar.js"></script>
-</head>
-<body>
+//= include/header-new.html
 
-
-<nav class="c-nav" data-module="Nav">
-    <div class="c-nav_background"></div>
-    <div class="c-nav_list-wrap o-scroll" data-scrollbar>
-        <ul class="c-nav_list" data-module="Dropdown">
-            <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                    <span class="c-nav_link_text">О компании</span>
-                    <span class="c-nav_link_line"></span>
-                </a>
-            </li>
-            <li class="c-nav_item -dropdown js-dropdown">
-                <div class="c-nav_link js-nav-link js-dropdown-toggle" data-section="a-propos-de-pomerleau">
-                    <span class="c-nav_link_text">Продукция</span>
-                    <span class="c-nav_link_line"></span>
-                </div>
-                <div class="c-nav_dropdown js-dropdown-list">
-                    <div class="c-nav_dropdown_wrap">
-                        <ul class="c-nav_dropdown_list">
-                            <li class="c-nav_dropdown_item">
-                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Похудение</a>
-                            </li>
-                            <li class="c-nav_dropdown_item">
-                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Косметика</a>
-                            </li>
-                            <li class="c-nav_dropdown_item">
-                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Здоровье</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                    <span class="c-nav_link_text">Партнерам</span>
-                    <span class="c-nav_link_line"></span>
-                </a>
-            </li>
-            <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                    <span class="c-nav_link_text">События</span>
-                    <span class="c-nav_link_line"></span>
-                </a>
-            </li>
-            <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                    <span class="c-nav_link_text">Обучение</span>
-                    <span class="c-nav_link_line"></span>
-                </a>
-            </li>
-            <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                    <span class="c-nav_link_text">Контакты</span>
-                    <span class="c-nav_link_line"></span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="c-nav_search" data-module="Search">
-        <div class="o-scroll" data-scrollbar>
-            <div class="c-search">
-                <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
-                <div class="c-search_results js-search-results">
-                    {{#displaySearchResults}}
-
-                    {{#hasProjects}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Projets <span class="c-search_number">({{projects.length}})</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#projects}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/projects}}
-                        </ul>
-                    </section>
-                    {{/hasProjects}}
-
-
-                    {{#hasNews}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Articles <span class="c-search_number">{{news.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#news}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/news}}
-                        </ul>
-                    </section>
-                    {{/hasNews}}
-
-                    {{#hasSections}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Pages <span class="c-search_number">{{sections.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#sections}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                    <div class="s-wysiwyg">
-                                        <p>{{description}}</p>
+        <div class="contacts__header">
+            <div class="header__inside">
+                <div class="container">
+                    <h1 class="header-title">Контакты</h1>
+                    <div class="row">
+                        <div class="columns contacts__left">
+                            <div class="contacts__caption">Головной офис</div>
+                            <div class="row">
+                                <div class="contacts__address columns">
+                                    <div class="contacts__subcaption">
+                                        Адрес головного офиса:
                                     </div>
-                                </a>
-                            </li>
-                            {{/sections}}
-                        </ul>
-                    </section>
-                    {{/hasSections}}
+                                    <div class="contacts__value">
+                                        Россия, г. Санкт-Петербург ул. Марата, д. 69-71, литер А,
+                                        RENAISSANCE PLAZA
+                                    </div>
+                                </div>
+                                <div class="contacts__phone columns">
+                                    <div class="contacts__subcaption">
+                                        Телефон
+                                    </div>
+                                    <div class="contacts__value">
+                                        <span class="contacts__phone-number">8 800-770-08-55</span>
+                                    </div>
+                                </div>
+                                <div class="contacts__email columns">
+                                    <div class="contacts__subcaption">
+                                        Почта
+                                    </div>
+                                    <div class="contacts__value">
+                                        <a href="mailto:info@jetfixpro.com">info@jetfixpro.com</a>
+                                    </div>
+                                </div>
+                            </div>
 
-                    {{/displaySearchResults}}
-                </div>
-            </div>
-        </div>
-    </div>
-    <aside class="c-nav_aside">
-        <ul class="c-nav_social">
-            <li class="c-nav_social_item">
-                <a class="c-nav_social_link" href="#" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </li>
-            <li class="c-nav_social_item">
-                <a class="c-nav_social_link" href="#" target="_blank">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </li>
-            <li class="c-nav_social_item">
-                <a class="c-nav_social_link" href="#" target="_blank">
-                    <i class="fa fa-vk"></i>
-                </a>
-            </li>
-        </ul>
-    </aside>
-</nav>
-
-<div class="header wow">
-    <div class="logo">
-        <a href="/">
-            <img src="/assets/images/logo.png" alt="">
-        </a>
-    </div>
-</div>
-
-<div id="wrapper">
-    <div id="sidebar" class="wow">
-        <div class="sidebar__inner">
-            <button class="c-nav-button nav-toggle">
-                <div class="c-nav-button_wrap">
-                    <div class="c-nav-button_icon">
-                        <span class="c-nav-button_line"></span>
-                        <span class="c-nav-button_line"></span>
-                        <span class="c-nav-button_line"></span>
+                        </div>
+                        <div class="columns contacts__right">
+                            <div class="contacts__caption">Перезвоните мне</div>
+                            <div class="contacts-forma row">
+                                <div class="contacts-forma__left columns">
+                                    <input type="text" placeholder="Ваше имя">
+                                    <input type="text" placeholder="Ваш телефон">
+                                    <input type="text" placeholder="Ваш e-mail">
+                                </div>
+                                <div class="contacts-forma__right columns">
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </button>
-            <div class="aside-nav">
-                <ul>
-                    <li><a class="menu-21" href="#">О компании</a></li>
-                    <li><a class="menu-22" href="#">Здоровье</a></li>
-                    <li><a class="menu-23" href="#">Косметика</a></li>
-                    <li><a class="menu-24" href="#">Похудение</a></li>
-                    <li><a class="menu-25" href="#">Партнерам</a></li>
-                    <li><a class="menu-26" href="#">События</a></li>
-                    <li><a class="menu-27" href="#">Обучение</a></li>
-                    <li><a class="menu-28" href="#">Вопросы</a></li>
-                    <li><a class="menu-29" href="#">Контакты</a></li>
-                </ul>
             </div>
         </div>
-    </div>
-    <div id="content">
-        <div class="row">
-            <p>331111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
-            <p>1111111111</p>
 
 
-
-        </div>
-    </div>
-</div>
-<footer class="c-footer">
-    <div class="">
-        <div class="row">
-            <div class="c-footer__left columns">
-                <img class="bottom-logo" src="/assets/images/logo-white.png" alt="">
-                <div class="copyright">
-                    Copyright 2017 · All rights reserved
+        <div class="contacts__map">
+            <div class="map-contacts">
+                <img class="map-image" src="/assets/images/map.png" alt="" />
+                <div class="map-info">
+                    <div class="map-info__logo">
+                        <img class="bottom-logo" src="/assets/images/logo-white.png" alt="">
+                    </div>
+                    <div class="map-info__phones">
+                        <div class="map-info__phone">
+                            <a href="#">8 (800) 555-27-65</a>
+                        </div>
+                        <div class="map-info__phone">
+                            <a href="#">8 (800) 555-27-65</a>
+                        </div>
+                    </div>
+                    <div class="map-info__social">
+                        Мы в соц сетях: <a class="fa fa-facebook" href="#"></a> <a class="fa fa-instagram" href="#"></a> <a class="fa fa-vk" href="#"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="c-footer__right columns">
-                <div class="footer__menu">
-                    <ul>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Продукция</a>
-                            <ul>
-                                <li><a href="#">Похудение</a></li>
-                                <li><a href="#">Косметика</a></li>
-                                <li><a href="#">Здоровье</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Партнерам</a></li>
-                        <li><a href="#">События</a></li>
-                        <li><a href="#">Обучение</a>
-                            <ul>
-                                <li><a href="#">Семинары</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Вопросы</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
-                </div>
-            </div>
+                <div class="map-info__markers">
+                    <div class="marker marker map-info__marker map-info__marker_barnaul" data-info='{"type":"Головной офис", "address":"г. Барнаул, ул. Строителей 15","phone":"8 (800) 555-27-65"}'" data-phone=""></div>
+                <div class="marker map-info__marker map-info__marker_moscow" data-info='{"type":"Офис", "address":"г. Москва, ул. Мира 28","phone":"8 (800) 555-27-65"}'"></div>
         </div>
-
+        <div class="marker-info">
+            <div class="marker-info__logo"><img src="/assets/images/logo-white.png" alt=""></div>
+            <div class="marker-info__address">
+                <span class="address__type">Головной офис:</span> <span class="address__text">г.Барнаул, ул.Строителей 15</span>
+            </div>
+            <div class="marker-info__phone">8 (800) 555-27-65</div>
+        </div>
     </div>
-</footer>
 
-
-<script src="assets/template/vendor/jquery-3.2.1.min.js"></script>
-<script src="assets/template/vendor/wow.min.js"></script>
-<script src="assets/template/vendor/sticky-sidebar.js"></script>
-<script src="assets/template/js/scripts.js"></script>
-</body>
-</html>
+//= include/footer-new.html
