@@ -4218,6 +4218,8 @@ body[data-route-option="prev-section"] .c-header-home_controls, body[data-route-
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
+  width: 120px;
+  height: 120px;
 }
 
 .is-loading .c-nav-button {

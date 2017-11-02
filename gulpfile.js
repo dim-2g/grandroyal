@@ -213,6 +213,7 @@ gulp.task('sprite:dev', function () {
     .pipe(gulp.dest(path.dev.sprites));
   return merge(imgStream, cssStream);
   //return spriteData.pipe(gulp.dest(path.tmp.sprites));
+
 });
 
 gulp.task('sprite:ann', function () {
