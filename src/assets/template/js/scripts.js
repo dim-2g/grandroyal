@@ -85,7 +85,7 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     arrows: true,
-                    dots: true,
+                    dots: false,
                 }
             }
         ]
@@ -112,7 +112,7 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     arrows: true,
-                    dots: true,
+                    dots: false
                 }
             }
         ]

@@ -44,16 +44,33 @@ body{
   display: block;
   margin-top: 3px;
 }
-.c-header__phone{
-  display: inline-block;
-  margin-left: 8px;
-  margin-right: 8px;
-  line-height: 38px;
-}
-.c-header__callback{
-  display: inline-block;
-  vertical-align: top;
-  line-height: 38px;
+.c-header{
+  &__phone{
+    display: block;
+    margin-left: 8px;
+    margin-right: 8px;
+    line-height: 38px;
+    @media($bp-larger-than-phablet){
+      display: inline-block;
+    }
+  }
+  &__callback{
+    display: block;
+    vertical-align: top;
+    @media($bp-larger-than-phablet){
+      display: inline-block;
+      line-height: 38px;
+    }
+  }
+  &__contacts{
+    margin-top: 0;
+    @media($bp-larger-than-phablet){
+      margin-top: 10px;
+    }
+    @media($bp-larger-than-tablet){
+      margin-top: 0;
+    }
+  }
 }
 .c-header_logo{
   width: 370px;
@@ -762,7 +779,7 @@ p{
     text-align: center;
   }
   .header1{
-    text-align: center;
+//    text-align: center;
 
   }
   .eventslider{
@@ -1121,13 +1138,13 @@ p{
     left: 120px;
     height: 120px;
     width: 370px;
-    padding-left: 0;
+    padding: 5px 10px;
   }
   @media($bp-larger-than-desktophd){
     height: 120px;
     width: 370px;
     left: 120px;
-    padding: 5px 22px;
+    padding: 5px 10px;
   }
   @media($bp-larger-than-1400){
     height: 135px;
@@ -1147,10 +1164,14 @@ p{
 }
 .c-footer{
   &__left{
-    width: 33%;
+    @media($bp-larger-than-tablet){
+      width: 33%;
+    }
   }
   &__right{
-    width: 67%;
+    @media($bp-larger-than-tablet){
+      width: 67%;
+    }
   }
 }
 
@@ -1448,7 +1469,6 @@ p{
         transform: translate3d(0px, 0px, 0px);
     }
     &__header{
-      font-size: 72px;
       text-transform: uppercase;
       font-weight: bold;
       text-shadow: 0px 1px #333;
@@ -1456,23 +1476,40 @@ p{
       z-index: 5;
       color: #fff;
       line-height: 120%;
-      min-height: 212px;
+      font-size: 24px;
+      margin-bottom: 30px;
+      @media($bp-larger-than-tablet){
+        margin-bottom: 0px;
+        font-size: 72px;
+        margin-bottom: 40px;
+        //min-height: 212px;
+      }
     }
     &__wrap{
-      padding-top: 160px;
+      padding-top: 116px;
+      @media($bp-larger-than-tablet){
+        padding-top: 160px;
+      }
       @media($bp-larger-than-1400){
         padding-top: 218px;
       }
     }
     &__text{
-      width: 50%;
+
+      @media($bp-larger-than-desktop){
+        width: 50%;
+      }
     }
     &__label{
       color: #fff;
       font-size: 14px;
       line-height: 150%;
-      min-height: 150px;
       display: inline-block;
+      margin-bottom: 30px;
+      @media($bp-larger-than-tablet){
+        margin-bottom: 0px;
+        min-height: 150px;
+      }
       @media($bp-larger-than-1400){
         min-height: 190px;
       }
@@ -1484,8 +1521,12 @@ p{
     }
     &__controls{
       .o-button{
-        width: 68px;
-        height: 68px;
+        width: 48px;
+        height: 48px;
+        @media($bp-larger-than-tablet){
+          width: 68px;
+          height: 68px;
+        }
         &.slick__next{
           margin-left: -4px;
         }
@@ -1500,6 +1541,10 @@ p{
   width: 100%;
   padding: 0px 0px 50px;
   float: left;
+  //margin-top: 30px;
+  @media($bp-larger-than-tablet){
+    margin-top: 0px;
+  }
   @media($bp-larger-than-desktop){
     background-color: #fff;
     border: 1px solid $blue;
@@ -1533,7 +1578,10 @@ p{
   }
   &__event-link{
     display: inline-block;
-    padding: 26px 18px; 
+    padding: 8px 18px;
+    @media($bp-larger-than-tablet){
+      padding: 26px 18px;
+    }
     &:hover{
       text-decoration: none;
       background-color: #f6f6f6;
@@ -1552,7 +1600,10 @@ p{
     color: #808080;
     font-weight: 300;
     line-height: 140%;
-    font-size: 16px;
+    font-size: 14px;
+    @media($bp-larger-than-tablet){
+      font-size: 16px;
+    }
   }
 
   &__product-list{
@@ -1566,7 +1617,7 @@ p{
     display: inline-block;
     width: 100%;
     color: #424242;
-    font-size: 24px;
+
     &:hover{
       text-decoration: none;
       background-color: #f6f6f6;
@@ -1574,11 +1625,22 @@ p{
   }
   &__product-name{
     display: block;
-    margin: 0px 12px 0px 36px;
-    padding: 20px 0;
+    margin: 0px 25px 0px 25px;
+    padding: 10px 0;
     line-height: 120%;
     font-weight: 300;
     border-top: 1px solid #dadada;
+    font-size: 18px;
+    @media($bp-larger-than-tablet){
+      font-size: 24px;
+      padding: 20px 0;
+      margin: 0px 12px 0px 36px;
+    }
+  }
+  .first{
+    &__product-name {
+      border-top: 0 none;
+    }
   }
 
 }
@@ -1595,20 +1657,32 @@ p{
   @media($bp-larger-than-desktop){
     padding: 75px 25px 75px 428px;
   }
-  .header1{
+}
+
+
+.header1{
+  font-size: 24px;
+  line-height: 120%;
+  @media($bp-larger-than-tablet){
     font-size: 40px;
-    line-height: 120%;
   }
-  h2,
-  .header2{
-    font-weight: 300;
+}
+h2,
+.header2{
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 120%;
+  @media($bp-larger-than-tablet){
     font-size: 40px;
-    line-height: 120%;
   }
-  .intro{
+}
+.intro{
+  font-size: 18px;
+  @media($bp-larger-than-tablet){
     font-size: 24px;
   }
 }
+
 
 .nicescroll-cursors{
   margin-right: 3px;
@@ -1696,7 +1770,7 @@ p{
 
 .content{
   &__wrap{
-    margin-top: 130px;
+    margin-top: 105px;
     margin-bottom: 30px;
     @media($bp-larger-than-tablet){
       margin-top: 208px;
@@ -1725,7 +1799,10 @@ p{
     position: relative;
     font-weight:300;
     transition: all 0.2s ease-in-out;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-tablet) {
+      margin-bottom: 50px;
+    }
     &--medium{
       @media($bp-larger-than-tablet) {
         height: 404px;
@@ -1761,8 +1838,11 @@ p{
     }
   }
   &__title{
-    font-size: 36px;
+    font-size: 28px;
     margin-bottom: 22px;
+    @media($bp-larger-than-tablet) {
+      font-size: 36px;
+    }
   }
   &__descr{
     font-size: 14px;
@@ -1773,9 +1853,12 @@ p{
     display: inline-block;
     width: 100%;
     height: 100%;
-    padding: 32px 42px;
+    padding: 30px 30px;
     position: relative;
     z-index: 2;
+    @media($bp-larger-than-tablet) {
+      padding: 32px 42px;
+    }
     &:hover{
       text-decoration: none;
     }
