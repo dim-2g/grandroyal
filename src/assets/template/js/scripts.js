@@ -91,7 +91,7 @@ $(function() {
         ]
     });
 
-    $('.carusel-products').slick({
+    $('.carusel-products-fly').slick({
         slidesToShow: 4,
         slidesToScroll: 1,
         dots: false,
@@ -108,7 +108,13 @@ $(function() {
                 }
             },
             {
-                breakpoint: 376,
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 1,
                     arrows: true,
@@ -117,7 +123,46 @@ $(function() {
             }
         ]
     });
-
+    $('.carusel-products').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        prevArrow: ' <button class="o-button -white- -square -left innerslider-button slick-prev slick-arrow" type="button"><span class="o-button_label"><svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg></span></button>',
+        nextArrow: ' <button class="o-button -white- -square -left innerslider-button slick-next slick-arrow" type="button"><span class="o-button_label"><svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg></span></button>',
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: true,
+                    dots: false
+                }
+            }
+        ]
+    });
 
 
 
@@ -133,14 +178,33 @@ $(function() {
         }
     });
 
+    $('.product-photos__main').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.product-photos__preview'
+    });
+    $('.product-photos__preview').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.product-photos__main',
+        dots: false,
+        arrows: false,
+        centerPadding: '0px',
+        centerMode: true,
+        focusOnSelect: true,
+        adaptiveHeight: true
+    });
+
 });
 
 
-/*
+
 new WOW({
     live: true
 }).init();
-*/
+
 fixSidebarHeight = function(scroll){
     var footer = $('footer').offset().top;
     var aside = $('.aside-nav');
@@ -190,7 +254,7 @@ initFlyMenu = function(scroll, scrollBottom){
     */
 
     footer_top = $('footer').offset().top;
-    $('title').html(footer_top + ':' + scrollBottom);
+    //$('title').html(footer_top + ':' + scrollBottom);
     if (scrollBottom > footer_top){
         btm = scrollBottom - footer_top;
         flymenu.css({'bottom': btm});
