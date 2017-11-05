@@ -1716,6 +1716,7 @@ p{
   font-size: 24px;
   line-height: 120%;
   font-weight: 300;
+  color: #424242;
   @media($bp-larger-than-tablet){
     font-size: 32px;
   }
@@ -2062,6 +2063,7 @@ h2,
     color: #424242;
     font-size: 16px;
     margin-bottom: 10px;
+    font-weight: 400;
   }
   &__anons{
     font-weight: 300;
@@ -2322,3 +2324,60 @@ h2,
     }
   }
 }
+.product-cards{
+  &__list{
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  &__item{
+    width: 33%;
+    padding: 0 12px;
+    vertical-align: top;
+    @media($bp-larger-than-1400){
+      width: 25%;
+    }
+  }
+  &__card{
+    background-color: #fff;
+    box-shadow: 1px 2px 3px 0px #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover{
+      box-shadow: 0px 0px 8px 3px #ccc;
+      .product-cards__anons{
+        //color: #424242;
+      }
+    }
+  }
+  &__image{
+    height: 242px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+  }
+  &__name{
+    color: #424242;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  &__anons{
+    font-weight: 300;
+    color: #808080;
+    font-size: 11px;
+    @media($bp-larger-than-mobile){
+      font-size: 14px;
+    }
+  }
+  &__link{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+

@@ -265,6 +265,22 @@ initFlyMenu = function(scroll, scrollBottom){
 
 }
 
+correcrHeight = function() {
+    elems = $('.product-cards__card');
+    if (elems.length>1) {
+        max_height = 0;
+        elems.each(function(){
+            this_height = $(this).outerHeight();
+            if (this_height>max_height) {
+                max_height = this_height;
+            }
+        })
+        $('.product-cards__card').css({'height': max_height});
+    }
+}
+
+correcrHeight();
+
 $(document).scroll(function(){
     var scroll = $(window).scrollTop();
     var scrollBottom = scroll + $(window).height();
