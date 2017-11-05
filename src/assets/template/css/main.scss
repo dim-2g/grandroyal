@@ -1701,7 +1701,7 @@ p{
 .content-fly-menu{
   color: #808080;
   padding: 25px;
-  max-width: 1560px;
+  max-width: 1720px;
   width: 100%;
   @media($bp-larger-than-desktop){
     padding: 35px 25px 35px 350px;
@@ -1790,6 +1790,65 @@ h2,
           content: "";
           display: inline-block;
           @include sprite($carusel-content-right);
+        }
+      }
+    }
+  }
+  &-about{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 0 50px 0 ;
+    margin-bottom: 40px;
+    max-width: 878px;
+    @media($bp-larger-than-mobile){
+      padding: 0 60px;
+    }
+    @media($bp-larger-than-1400){
+      padding: 0 80px;
+    }
+    .slick-slide{
+      img{
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .slick-arrow{
+      position: absolute;
+      bottom: 0;
+      top: auto;
+      margin-top: -24px;
+      color: transparent;
+      width: 48px;
+      height: 48px;
+      line-height: 100%;
+      border: 1px solid #949a9c;
+      @media($bp-larger-than-mobile){
+        bottom: auto;
+        top: 50%;
+      }
+      @media($bp-larger-than-1400){
+        width: 68px;
+        height: 68px;
+        margin-top: -34px;
+      }
+      &.o-button.-left.-square:hover{
+        .o-button_label{
+          transform: translate(0);
+        }
+      }
+      &.slick-prev{
+        left: 50%;
+        margin-left: -47px;
+        @media($bp-larger-than-mobile){
+          margin-left: 0;
+          left: 0px;
+        }
+      }
+      &.slick-next{
+        left: 50%;
+        @media($bp-larger-than-mobile){
+          left: auto;
+          right: 0px;
         }
       }
     }
@@ -2328,11 +2387,15 @@ h2,
   &__list{
     margin-left: -12px;
     margin-right: -12px;
+    margin-bottom: 30px;
   }
   &__item{
-    width: 33%;
+    width: 100%;
     padding: 0 12px;
     vertical-align: top;
+    @media($bp-larger-than-phablet){
+      width: 50%;
+    }
     @media($bp-larger-than-1400){
       width: 25%;
     }
@@ -2343,7 +2406,7 @@ h2,
     padding: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    max-width: 275px;
+    max-width: 370px;
     margin-left: auto;
     margin-right: auto;
     &:hover{
@@ -2381,3 +2444,243 @@ h2,
   }
 }
 
+.jfp-howitworks{
+  margin-bottom: 50px;
+  &__label{
+    font-size: 24px;
+    width: 100%;
+    color: #424242;
+    float: none;
+    @media($bp-larger-than-tablet){
+      width: 325px;
+      float: left;
+      font-size: 32px;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 40px;
+      width: 385px;
+    }
+  }
+  &__text{
+    overflow: hidden;
+    padding-top: 12px;
+    p{
+      margin-bottom: 20px;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      li{
+        position: relative;
+        padding-left: 60px;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-bottom: 14px;
+        color: #424242;
+        @media($bp-larger-than-tablet){
+          font-size: 14px;
+        }
+        &:before{
+          content: "";
+          width: 37px;
+          height: 1px;
+          position: absolute;
+          top: 8px;
+          left: 2px;
+          background-color: #919191;
+        }
+      }
+    }
+  }
+}
+
+.jfp-recomend{
+  background: none;
+  margin-bottom: 20px;
+  @media($bp-larger-than-1400){
+    margin-bottom: 150px;
+  }
+  @media($bp-larger-than-desktophd){
+    background: transparent url('/assets/template/img/jetfixpro/recomend__bg.png') left top no-repeat;
+    background-size: 60% auto;
+  }
+  &__caption{
+    font-size: 24px;
+    text-align: center;
+    color: #424242;
+    @media($bp-larger-than-tablet){
+      font-size: 32px;
+      text-align: left;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 40px;
+    }
+  }
+  &__right{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    @media($bp-larger-than-mobile){
+      width: 340px;
+    }
+    @media($bp-larger-than-desktophd){
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+  }
+  &__buttons{
+    padding: 46px 0;
+    @media($bp-larger-than-1400){
+      padding: 46px 0 80px;
+    }
+  }
+  &__button{
+    margin-bottom: 20px;
+    .o-button.-width{
+      width: 100%;
+    }
+  }
+}
+
+.jfpad-target{
+  margin-bottom: 65px;
+  @media($bp-larger-than-1400){
+    margin-bottom: 130px;
+  }
+  &__label{
+    font-size: 24px;
+    color: #424242;
+    float: none;
+    margin-bottom: 14px;
+    @media($bp-larger-than-tablet){
+      float: left;
+      font-size: 24px;
+      margin-right: 20px;
+      margin-bottom: 0px;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 40px;
+      margin-right: 37px;
+    }
+  }
+  &__text{
+    overflow: hidden;
+    padding-top: 7px;
+    @media($bp-larger-than-1400){
+      padding-top: 14px;
+    }
+    p{
+      margin-bottom: 20px;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      li{
+        position: relative;
+        padding-left: 60px;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-bottom: 14px;
+        color: #424242;
+        @media($bp-larger-than-1400){
+          font-size: 18px;
+        }
+        &:before{
+          content: "";
+          width: 37px;
+          height: 1px;
+          position: absolute;
+          top: 8px;
+          left: 2px;
+          background-color: #919191;
+        }
+      }
+    }
+  }
+}
+
+.jfpad-differ{
+  margin-bottom: 34px;
+  margin-top: 50px;
+  @media($bp-larger-than-1400){
+    margin-bottom: 68px;
+  }
+  &__header{
+    font-size: 24px;
+    color: #424242;
+    @media($bp-larger-than-tablet){
+      font-size: 24px;
+      margin-bottom: 48px;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 40px;
+    }
+  }
+  &__label{
+    color: #424242;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    @media($bp-larger-than-tablet){
+      width: 200px;
+      float: left;
+      margin-bottom: 0px;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 18px;
+    }
+  }
+  &__text{
+    overflow: hidden;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 16px;
+    @media($bp-larger-than-1400){
+      font-size: 18px;
+    }
+  }
+}
+
+.sertificaty{
+  &__list{
+    margin-bottom: 30px;
+  }
+  &__caption{
+    color: #424242;
+    font-size: 18px;
+    padding-left: 45px;
+    position: relative;
+    height: 50px;
+    &:before{
+      content: "";
+      position: absolute;
+      @include sprite($pdf);
+      left: 0;
+      top: 0;
+    }
+  }
+  &__item{
+    width: 50%;
+    padding: 0 15px;
+  }
+  &__image{
+    border: 1px solid #cacaca;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    @media($bp-larger-than-1400){
+      width: 48%;
+      margin-right: 4%;
+    }
+  }
+  &__info{
+    width: 48%;
+    display: none;
+    @media($bp-larger-than-1400){
+      display: block;
+    }
+  }
+}

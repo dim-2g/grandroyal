@@ -197,6 +197,18 @@ $(function() {
         adaptiveHeight: true
     });
 
+    $('.carusel-about').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        prevArrow: ' <button class="o-button -white- -square -left innerslider-button slick-prev slick-arrow" type="button"><span class="o-button_label"><svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg></span></button>',
+        nextArrow: ' <button class="o-button -white- -square -left innerslider-button slick-next slick-arrow" type="button"><span class="o-button_label"><svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg></span></button>'
+    });
+
+
 });
 
 
@@ -229,6 +241,7 @@ showFlyMenu = function(scroll){
         $('body').removeClass('fly-menu-open');
     }
 }
+showFlyMenu(0);
 
 setAnimated = function(){
     var scroll = $(window).scrollTop()+$(window).height();
