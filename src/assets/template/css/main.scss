@@ -349,7 +349,10 @@ body{
   background-position: right -622px;
 }
 
-
+.o-button{
+  height: 50px;
+  box-sizing: border-box;
+}
 .o-container-2 {
   background-attachment: fixed;
   background-image: url("/assets/images/fon-tree.jpg");
@@ -697,7 +700,6 @@ p{
   background-color: #fff;
   box-shadow: 1px 1px 5px 0 #ccc;
   display: inline-block;
-
 }
 .slick-initialized .events__item{
   max-width: none;
@@ -727,6 +729,7 @@ p{
   font-weight: 400;
   line-height: 110%;
   margin-bottom: 6px;
+  color: #424242;
 }
 .events__intro {
   line-height: 150%;
@@ -1516,12 +1519,14 @@ p{
       line-height: 150%;
       display: inline-block;
       margin-bottom: 30px;
+      ;
       @media($bp-larger-than-tablet){
         margin-bottom: 0px;
         min-height: 150px;
       }
       @media($bp-larger-than-desktop){
         width: 50%;
+        //max-width: 775px;
       }
       @media($bp-larger-than-1400){
         min-height: 190px;
@@ -1729,6 +1734,7 @@ h2,
   font-weight: 300;
   font-size: 22px;
   line-height: 120%;
+  color: #424242;
   @media($bp-larger-than-tablet){
     font-size: 32px;
   }
@@ -1950,6 +1956,9 @@ h2,
     @media($bp-larger-than-tablet){
       margin-top: 208px;
       margin-bottom: 40px;
+    }
+    &--bnr{
+      margin-top: 30px;
     }
   }
 }
@@ -2650,37 +2659,623 @@ h2,
   }
   &__caption{
     color: #424242;
-    font-size: 18px;
-    padding-left: 45px;
+    font-size: 16px;
+    padding-left: 35px;
     position: relative;
     height: 50px;
+    line-height: 50px;
+    @media($bp-larger-than-phablet){
+      font-size: 18px;
+      padding-left: 45px;
+      line-height: 100%;
+    }
+    a{
+      line-height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
     &:before{
       content: "";
       position: absolute;
       @include sprite($pdf);
       left: 0;
-      top: 0;
+      top: 50%;
+      margin-top: -14px;
     }
   }
   &__item{
-    width: 50%;
+    width: 100%;
     padding: 0 15px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-1400){
+      width: 50%;
+      margin-bottom: 75px;
+    }
+    a{
+      color: #424242;
+      &:hover{
+        text-decoration: none;
+      }
+    }
   }
   &__image{
     border: 1px solid #cacaca;
-    padding: 30px;
+    padding: 15px;
     width: 100%;
     text-align: center;
-    @media($bp-larger-than-1400){
-      width: 48%;
+    margin-bottom: 20px;
+    @media($bp-larger-than-phablet){
+      width: 40%;
       margin-right: 4%;
+      padding: 30px;
+      margin-bottom: 0px;
     }
   }
   &__info{
-    width: 48%;
-    display: none;
-    @media($bp-larger-than-1400){
-      display: block;
+
+    @media($bp-larger-than-phablet){
+      width: 56%;
     }
+  }
+}
+
+
+.seminars{
+  &__list{
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  &__item{
+
+    padding: 0 30px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-desktop){
+      width: 50%;
+    }
+  }
+  &__card{
+    //max-width: 740px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    &:hover{
+      box-shadow: 0 0 5px 2px #ccc;
+      &:before{
+        opacity: 0.7;
+      }
+    }
+    &:before{
+      content: "";
+      background-color: #000;
+      opacity: 0.56;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  &__card-inner{
+    //display: inline-block;
+   // height: 100%;
+   // width: 100%;
+    padding: 20px;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    @media($bp-larger-than-mobile){
+      padding: 34px 42px;
+    }
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  &__name{
+    font-size: 24px;
+    margin-bottom: 24px;
+    line-height: 100%;
+    @media($bp-larger-than-mobile){
+      font-size: 34px;
+    }
+    a{
+      color: #fff;
+      &:hover{
+        text-decoration: none;
+        color: $blue;
+      }
+    }
+  }
+  &__param-name{
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  &__param-value{
+    font-size: 18px;
+    @media($bp-larger-than-mobile){
+      font-size: 24px;
+    }
+  }
+  &__date{
+    float: left;
+    border-right: 1px solid #fff;
+    margin-right: 20px;
+    padding-right: 20px;
+    @media($bp-larger-than-mobile){
+      border-right: 1px solid #fff;
+      margin-right: 58px;
+      padding-right: 45px;
+    }
+
+  }
+  &__anons {
+    line-height: 150%;
+    height: 108px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    @media($bp-larger-than-mobile){
+      margin-bottom: 0px;
+    }
+  }
+  &__params {
+    margin-bottom: 36px;
+  }
+  .o-button.-width{
+    width: 100%;
+    padding: 0 10px;
+    .o-button_label{
+      @media($bp-larger-than-mobile){
+        letter-spacing: 3px;
+        padding: 0 38px;
+        width: auto;
+      }
+    }
+  }
+
+}
+
+.seminar-archive{
+  margin-left: -15px;
+  margin-right: -15px;
+  @media($bp-larger-than-1400){
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+  &__item{
+
+    padding: 0 15px;
+    margin-bottom: 30px;
+    @media($bp-larger-than-desktop){
+      width: 50%;
+    }
+    @media($bp-larger-than-desktophd){
+      width:33.33%;
+    }
+    @media($bp-larger-than-1400){
+      padding: 0 30px;
+      margin-bottom: 60px;
+    }
+  }
+  &__card{
+    background-color: #fff;
+    box-shadow: 1px 1px 5px 0 #ccc;
+    &:hover{
+      box-shadow: 0px 0px 10px 5px #ccc;
+    }
+  }
+  &__image{
+    height: 203px;
+    background-position: top center;
+    background-size: cover;
+  }
+  &__info{
+    padding: 20px 20px;
+  }
+  &__caption {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 110%;
+    margin-bottom: 6px;
+    color: #424242;
+  }
+  &__date {
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+  &__link{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    color: $gray;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+.slider-seminars{
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 60px;
+  width: 100%;
+  @media($bp-larger-than-mobile){
+    width: 320px;
+  }
+  @media($bp-larger-than-desktop){
+    margin-bottom: 0;
+    margin-left: 30px;
+  }
+
+  &__list{
+    margin-bottom: 30px;
+  }
+  &__param-name{
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  &__param-value{
+    font-size: 18px;
+    color: #fff;
+    @media($bp-larger-than-mobile){
+      font-size: 24px;
+    }
+  }
+  &__date{
+    float: left;
+    border-right: 1px solid #fff;
+    margin-right: 30px;
+    padding-right: 30px;
+    @media($bp-larger-than-mobile){
+      margin-right: 45px;
+      padding-right: 45px;
+    }
+  }
+  &__params {
+    margin-bottom: 36px;
+  }
+  .o-button.-width{
+    width: 100%;
+    padding: 0 10px;
+    .o-button_label{
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.seminar-page{
+  max-width: 1275px;
+  &__image{
+    max-width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  &__type{
+    text-transform: uppercase;
+    color: $blue;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+  &__name{
+    .header1{
+      margin-top: 0;
+    }
+  }
+  &__meta{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .columns{
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      @media($bp-larger-than-phablet){
+        width: 50%;
+        padding-left: 100px;
+        padding-top: 0;
+      }
+      @media($bp-larger-than-desktop){
+        width: auto;
+        margin-left: 25px;
+        padding-left: 25px;
+        border-left: 1px solid #dadada;
+      }
+    }
+    > .columns:first-child{
+      border: 0 none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .seminar-page__speaker.columns{
+      padding-top: 100px;
+      position: relative;
+      @media($bp-larger-than-phablet){
+        padding-left: 100px;
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__speaker-photo{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    float: left;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    border: 1px solid #e7e7e7;
+    @media($bp-larger-than-phablet){
+      top: auto;
+    }
+  }
+  &__table{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 40px;
+    @media($bp-larger-than-tablet){
+      display: table;
+    }
+    @media($bp-larger-than-desktophd){
+      font-size: 20px;
+    }
+    @media($bp-larger-than-1400){
+      font-size: 24px;
+    }
+    &-head{
+      display: none;
+      white-space: nowrap;
+      text-align: center;
+      color: #424242;
+      background-color: #e7e7e7;
+      @media($bp-larger-than-tablet){
+        display: table-row;
+      }
+      > div {
+        padding: 20px 20px;
+      }
+      .seminar-page__table-theme{
+        text-align: center;
+      }
+
+    }
+    &-row{
+      display: block;
+      @media($bp-larger-than-tablet){
+        display: table-row;
+      }
+      > div{
+        border-bottom: 1px solid #e7e7e7;
+        padding: 30px 20px;
+        vertical-align: middle;
+      }
+      .seminar-page__table-speaker{
+
+      }
+    }
+    &-speaker{
+      display: block;
+      text-align: center;
+      @media($bp-larger-than-tablet){
+        display: table-cell;
+      }
+    }
+    &-theme{
+      display: block;
+      text-align: left;
+      @media($bp-larger-than-tablet){
+        display: table-cell;
+      }
+    }
+    &-time{
+      display: block;
+      text-align: center;
+      margin-bottom: 40px;
+      @media($bp-larger-than-tablet){
+        display: table-cell;
+        margin-bottom: 0px;
+      }
+    }
+    &-author{
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid #e7e7e7;
+      display: inline-block;
+    }
+  }
+}
+
+.seminar-meta{
+  &__name{
+    text-transform: uppercase;
+    color: $blue;
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+  &__value{
+    color: #424242;
+    font-size: 16px;
+    margin-bottom: 5px;
+    @media($bp-larger-than-desktophd){
+      font-size: 24px;
+    }
+  }
+}
+
+.seminar-form{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  &__caption{
+    font-size: 20px;
+    color: #424242;
+    margin-bottom: 20px;
+    @media($bp-larger-than-mobile){
+      font-size: 24px;
+    }
+  }
+  form{
+    margin-left: -9px;
+    margin-right: -9px;
+  }
+  &__item{
+
+    padding: 0 9px;
+    margin-bottom: 20px;
+    @media($bp-larger-than-tablet){
+      width: 50%;
+    }
+    @media($bp-larger-than-desktop){
+      width: 25%;
+    }
+    &-button{
+      text-align: center;
+      @media($bp-larger-than-tablet){
+        text-align: right;
+      }
+      @media($bp-larger-than-desktop){
+        text-align: left;
+      }
+    }
+  }
+  .o-button.-width {
+    max-width: 220px;
+  }
+  input[type="text"]{
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    height: 50px;
+    line-height: 48px;
+    padding: 4px 20px;
+  }
+}
+.speaker-page{
+  &__left{
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    text-align: center;
+    @media($bp-larger-than-tablet){
+      width: 372px;
+      float: left;
+      padding-right: 38px;
+    }
+  }
+  &__right{
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  &__photo{
+    margin-bottom: 45px;
+    img{
+      max-width: 100%;
+    }
+  }
+  &__seminars{
+    text-align: center;
+  }
+}
+
+.faq{
+  &__list{
+    margin-left: -29px;
+    margin-right: -29px;
+  }
+  &__item{
+    width: 50%;
+    padding-left: 29px;
+    padding-right: 29px;
+    margin-bottom: 45px;
+    &--health{
+      .faq__card{
+        border: 1px solid #76a9bc;
+      }
+      .faq__question{
+        &:before{
+          background: transparent url('/assets/template/img/faq/icon-health.jpg') left top no-repeat;
+        }
+      }
+    }
+    &--weight{
+      .faq__card{
+        border: 1px solid #add56f;
+      }
+      .faq__question{
+        &:before{
+          background: transparent url('/assets/template/img/faq/icon-weight.jpg') left top no-repeat;
+        }
+      }
+    }
+    &--beauty{
+      .faq__card{
+        border: 1px solid #d57b6f;
+
+      }
+      .faq__question{
+        &:before{
+          background: transparent url('/assets/template/img/faq/icon-beauty.jpg') left top no-repeat;
+        }
+      }
+    }
+    &--big{
+      .faq__card{
+        @media($bp-larger-than-1400) {
+          height: 535px;
+        }
+      }
+    }
+    &--3{
+      @media($bp-larger-than-1400){
+        width: 33.33%
+      }
+    }
+    &--4{
+      @media($bp-larger-than-1400) {
+        width: 33.33%
+      }
+    }
+    &--5{
+      @media($bp-larger-than-1400) {
+        width: 33.33%
+      }
+    }
+  }
+  &__card{
+    padding: 35px;
+    height: 245px;
+    overflow-y: auto;
+  }
+  &__question{
+    padding-left: 125px;
+    font-size: 22px;
+    color: #424242;
+    position: relative;
+    min-height: 88px;
+    margin-bottom: 16px;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 93px;
+      height: 88px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__answer{
   }
 }

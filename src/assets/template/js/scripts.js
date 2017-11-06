@@ -178,6 +178,14 @@ $(function() {
         }
     });
 
+    $('.zoom').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        image: {
+            verticalFit: true
+        }
+    });
+
     $('.product-photos__main').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -233,6 +241,7 @@ fixSidebarHeight = function(scroll){
 
 showFlyMenu = function(scroll){
     gotoElement = $('.fly-menu-goto');
+    if (gotoElement.length==0) return;
     gotoValue = gotoElement.offset().top + gotoElement.height() - $('.header').height();
     //$('title').html(gotoValue + ':' + scroll);
     if (scroll > gotoValue) {
