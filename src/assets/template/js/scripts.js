@@ -26,7 +26,7 @@ $(function() {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        // speed: '3000',
+        //speed: '3000',
         autoplay: true,
         asNavFor: '.previewer'
     });
@@ -36,6 +36,21 @@ $(function() {
     $('.mainslider-button.slick__prev').on('click', function(){
         mainslider.slick('slickPrev');
     });
+
+    var previewer = $(".previewer");
+    var previewer_length = $(".previewer__item").length;
+    previewer.slick({
+        asNavFor: '.mainslider',
+        slidesToShow: previewer_length,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        centerPadding: '0px',
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        infinite: true
+    });
+
     
     var innerslider = $(".innerslider");
     innerslider.slick({
@@ -216,6 +231,59 @@ $(function() {
         nextArrow: ' <button class="o-button -white- -square -left innerslider-button slick-next slick-arrow" type="button"><span class="o-button_label"><svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg></span></button>'
     });
 
+    var eventslider = $(".eventslider");
+    eventslider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        centerPadding: '0px',
+        // centerMode: true,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    $('.logos').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        centerPadding: '0px',
+        centerMode: true,
+        focusOnSelect: true,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 99999,
+                settings: "unslick"
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: true,
+                }
+            }
+        ]
+    });
+
 
 });
 
@@ -265,6 +333,7 @@ setAnimated = function(){
 }
 initFlyMenu = function(scroll, scrollBottom){
     var flymenu = $('.fly-menu');
+    if (flymenu.length==0) return;
     flymenu_heigth = flymenu.height();
     flymenu_top = flymenu.position().top;
     /*

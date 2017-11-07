@@ -1,258 +1,213 @@
 <!doctype html>
-<!--[if lte IE 9]>     <html lang="fr" class="t-home ie9"> <![endif]-->
-<!--[if gt IE 9]><!--> <html lang="fr"> <!--<![endif]-->
+<html>
 <head>
-    <!--<base href="http://grand.r404.ru/">-->
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#141416">
-
-
-
-    <title>GrandRoyalHall</title>
-    <meta name="description" content="">
-
-    <base href="">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/pomerleau/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/assets/pomerleau/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/assets/pomerleau/images/favicon-16x16.png" sizes="16x16">
-    <link rel="mask-icon" href="/assets/pomerleau/images/safari-pinned-tab.svg" color="#5bbad5">
-
-    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="/fonts/font-awesome.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/js/slick/slick.css">
-    <link rel="stylesheet" href="/js/magnific/magnific-popup.css">
-    <link rel="stylesheet" href="/css/custom.css">
-
-    <link rel="stylesheet" href="/assets/template/css/main.css">
-
+    <title>Главная</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <!--<link rel="stylesheet" href="assets/template/vendor/scrollpane/jquery.jscrollpane.css">-->
+    <link rel="stylesheet" href="/assets/template/css/main.css">
+    <link rel="stylesheet" href="assets/template/vendor/slick/slick.css">
+    <link rel="stylesheet" href="assets/template/vendor/magnific/magnific-popup.css">
 
 
 </head>
+<body>
 
-<body data-template="home">
-<div class="o-loader">
-    <div class="o-loader_line"></div>
+
+<nav class="c-nav" data-module="Nav">
+    <div class="c-nav_background"></div>
+    <div class="c-nav_list-wrap o-scroll" data-scrollbar>
+        <ul class="c-nav_list" data-module="Dropdown">
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">О компании</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item -dropdown js-dropdown">
+                <div class="c-nav_link js-nav-link js-dropdown-toggle" data-section="a-propos-de-pomerleau">
+                    <span class="c-nav_link_text">Продукция</span>
+                    <span class="c-nav_link_line"></span>
+                </div>
+                <div class="c-nav_dropdown js-dropdown-list">
+                    <div class="c-nav_dropdown_wrap">
+                        <ul class="c-nav_dropdown_list">
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="/losingweight.html" data-route="nav" data-route-option="via-nav">Похудение</a>
+                            </li>
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="/cosmetics.html" data-route="nav" data-route-option="via-nav">Косметика</a>
+                            </li>
+                            <li class="c-nav_dropdown_item">
+                                <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Здоровье</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Партнерам</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="/events.html" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">События</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="/training.html" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Обучение</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+            <li class="c-nav_item">
+                <a class="c-nav_link js-nav-link" href="/contacts.html" data-route="nav" data-route-option="via-nav">
+                    <span class="c-nav_link_text">Контакты</span>
+                    <span class="c-nav_link_line"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="c-nav_search" data-module="Search">
+        <div class="o-scroll" data-scrollbar>
+            <div class="c-search">
+                <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
+                <div class="c-search_results js-search-results">
+                    {{#displaySearchResults}}
+
+                    {{#hasProjects}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Projets <span class="c-search_number">({{projects.length}})</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#projects}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                </a>
+                            </li>
+                            {{/projects}}
+                        </ul>
+                    </section>
+                    {{/hasProjects}}
+
+
+                    {{#hasNews}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Articles <span class="c-search_number">{{news.length}}</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#news}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                </a>
+                            </li>
+                            {{/news}}
+                        </ul>
+                    </section>
+                    {{/hasNews}}
+
+                    {{#hasSections}}
+                    <section class="c-search_section">
+                        <h2 class="c-search_heading u-uppercase">
+                            Pages <span class="c-search_number">{{sections.length}}</span>
+                        </h2>
+                        <ul class="c-search_list">
+                            {{#sections}}
+                            <li class="c-search_item">
+                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
+                                    <h3 class="c-search_title">{{title}}</h3>
+                                    <div class="s-wysiwyg">
+                                        <p>{{description}}</p>
+                                    </div>
+                                </a>
+                            </li>
+                            {{/sections}}
+                        </ul>
+                    </section>
+                    {{/hasSections}}
+
+                    {{/displaySearchResults}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <aside class="c-nav_aside">
+        <ul class="c-nav_social">
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+            <li class="c-nav_social_item">
+                <a class="c-nav_social_link" href="#" target="_blank">
+                    <i class="fa fa-vk"></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</nav>
+
+<div class="header wow">
+    <div class="logo">
+        <a href="/">
+            <img src="/assets/images/logo.png" alt="">
+        </a>
+    </div>
+    <div class="c-header__contacts">
+        <div class="c-header__phone">
+            <a href="tel:">8 (800) 250-88-00</a>
+        </div>
+        <div class="c-header__callback">
+            <a href="#callback" class="open-popup-link">Заказать звонок</a>
+        </div>
+    </div>
 </div>
 
-<div class="o-barba js-barba" id="js-barba-wrapper">
-    <div class="js-barba-container o-barba_container" data-template="home">
-
-
-        <header class="c-header">
-            <div class="c-header_button"></div>
-            <div class="c-header_logo">
-                <div class="c-header_logo_wrap">
-                    <a href="/">
-                        <img src="/assets/images/logo.png" alt="">
-                    </a>
-                    <div class="c-header__contacts">
-                        <div class="c-header__phone">
-                            <a href="tel:">8 (800) 250-88-00</a>
-                        </div>
-                        <div class="c-header__callback">
-                            <a href="#callback" class="open-popup-link">Заказать звонок</a>
-                        </div>
+<div id="wrapper">
+    <div id="sidebar" class="wow">
+        <div class="sidebar__inner">
+            <button class="c-nav-button nav-toggle">
+                <div class="c-nav-button_wrap">
+                    <div class="c-nav-button_icon">
+                        <span class="c-nav-button_line"></span>
+                        <span class="c-nav-button_line"></span>
+                        <span class="c-nav-button_line"></span>
                     </div>
                 </div>
-
-            </div>
-
-
-
-
-        </header>
-
-        <button class="c-nav-button js-nav-toggle" type="button">
-            <div class="c-nav-button_wrap">
-                <div class="c-nav-button_icon">
-                    <span class="c-nav-button_line"></span>
-                    <span class="c-nav-button_line"></span>
-                    <span class="c-nav-button_line"></span>
-                </div>
-            </div>
-        </button>
-
-        <nav class="c-nav" data-module="Nav">
-            <div class="c-nav_background"></div>
-            <div class="c-nav_list-wrap o-scroll" data-scrollbar>
-                <ul class="c-nav_list" data-module="Dropdown">
-                    <li class="c-nav_item">
-                        <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                            <span class="c-nav_link_text">О компании</span>
-                            <span class="c-nav_link_line"></span>
-                        </a>
-                    </li>
-                    <li class="c-nav_item -dropdown js-dropdown">
-                        <div class="c-nav_link js-nav-link js-dropdown-toggle" data-section="a-propos-de-pomerleau">
-                            <span class="c-nav_link_text">Продукция</span>
-                            <span class="c-nav_link_line"></span>
-                        </div>
-                        <div class="c-nav_dropdown js-dropdown-list">
-                            <div class="c-nav_dropdown_wrap">
-                                <ul class="c-nav_dropdown_list">
-                                    <li class="c-nav_dropdown_item">
-                                        <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Похудение</a>
-                                    </li>
-                                    <li class="c-nav_dropdown_item">
-                                        <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Косметика</a>
-                                    </li>
-                                    <li class="c-nav_dropdown_item">
-                                        <a class="c-nav_dropdown_link" href="#" data-route="nav" data-route-option="via-nav">Здоровье</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="c-nav_item">
-                        <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                            <span class="c-nav_link_text">Партнерам</span>
-                            <span class="c-nav_link_line"></span>
-                        </a>
-                    </li>
-                    <li class="c-nav_item">
-                        <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                            <span class="c-nav_link_text">События</span>
-                            <span class="c-nav_link_line"></span>
-                        </a>
-                    </li>
-                    <li class="c-nav_item">
-                        <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                            <span class="c-nav_link_text">Обучение</span>
-                            <span class="c-nav_link_line"></span>
-                        </a>
-                    </li>
-                    <li class="c-nav_item">
-                        <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
-                            <span class="c-nav_link_text">Контакты</span>
-                            <span class="c-nav_link_line"></span>
-                        </a>
-                    </li>
+            </button>
+            <div class="aside-nav">
+                <ul>
+                    <li><a class="menu-21" href="/about.html">О компании</a></li>
+                    <li><a class="menu-22" href="#">Здоровье</a></li>
+                    <li><a class="menu-23" href="/cosmetics.html">Косметика</a></li>
+                    <li><a class="menu-24" href="/losingweight.html">Похудение</a></li>
+                    <li><a class="menu-25" href="#">Партнерам</a></li>
+                    <li><a class="menu-26" href="/events.html">События</a></li>
+                    <li><a class="menu-27" href="/training.html">Обучение</a></li>
+                    <li><a class="menu-28" href="/faq.html">Вопросы</a></li>
+                    <li><a class="menu-29" href="/contacts.html">Контакты</a></li>
                 </ul>
             </div>
-            <div class="c-nav_search" data-module="Search">
-                <div class="o-scroll" data-scrollbar>
-                    <div class="c-search">
-                        <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
-                        <div class="c-search_results js-search-results">
-                            {{#displaySearchResults}}
-
-                            {{#hasProjects}}
-                            <section class="c-search_section">
-                                <h2 class="c-search_heading u-uppercase">
-                                    Projets <span class="c-search_number">({{projects.length}})</span>
-                                </h2>
-                                <ul class="c-search_list">
-                                    {{#projects}}
-                                    <li class="c-search_item">
-                                        <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                            <h3 class="c-search_title">{{title}}</h3>
-                                        </a>
-                                    </li>
-                                    {{/projects}}
-                                </ul>
-                            </section>
-                            {{/hasProjects}}
-
-
-                            {{#hasNews}}
-                            <section class="c-search_section">
-                                <h2 class="c-search_heading u-uppercase">
-                                    Articles <span class="c-search_number">{{news.length}}</span>
-                                </h2>
-                                <ul class="c-search_list">
-                                    {{#news}}
-                                    <li class="c-search_item">
-                                        <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                            <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
-                                            <h3 class="c-search_title">{{title}}</h3>
-                                        </a>
-                                    </li>
-                                    {{/news}}
-                                </ul>
-                            </section>
-                            {{/hasNews}}
-
-                            {{#hasSections}}
-                            <section class="c-search_section">
-                                <h2 class="c-search_heading u-uppercase">
-                                    Pages <span class="c-search_number">{{sections.length}}</span>
-                                </h2>
-                                <ul class="c-search_list">
-                                    {{#sections}}
-                                    <li class="c-search_item">
-                                        <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                            <h3 class="c-search_title">{{title}}</h3>
-                                            <div class="s-wysiwyg">
-                                                <p>{{description}}</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    {{/sections}}
-                                </ul>
-                            </section>
-                            {{/hasSections}}
-
-                            {{/displaySearchResults}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <aside class="c-nav_aside">
-                <ul class="c-nav_social">
-                    <li class="c-nav_social_item">
-                        <a class="c-nav_social_link" href="#" target="_blank">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="c-nav_social_item">
-                        <a class="c-nav_social_link" href="#" target="_blank">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="c-nav_social_item">
-                        <a class="c-nav_social_link" href="#" target="_blank">
-                            <i class="fa fa-vk"></i>
-                        </a>
-                    </li>
-                </ul>
-            </aside>
-        </nav>
-
-        <!--nav class="c-article_nav js-parallax js-news-nav" data-module="News" data-target="#js-article-aside" data-position="top" data-scrollbar>
-            <article class="scroll-content">
-                <div class="c-article_nav_list-wrap js-news-list">
-                <ul class="c-article_nav_list"><li class="c-article_nav_item"><a class="c-article_nav_link is-current" href="en/news/61/pomerleau-projects-recognized-at-the-inova-awards-gala"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="30/10/2017">30/10/2017</time> <h3 class="c-article_nav_heading">Pomerleau projects recognized at the INOVA Awards Gala</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/60/pomerleau-presents-donations-from-2017-challenge-to-two-causes"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="26/10/2017">26/10/2017</time> <h3 class="c-article_nav_heading">Pomerleau presents donations from 2017 Challenge to two causes</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/59/pomerleau-celebrates-its-new-toronto-office"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="25/10/2017">25/10/2017</time> <h3 class="c-article_nav_heading">Pomerleau celebrates its new Toronto office</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/58/borea-construction-awarded-the-largest-solar-power-project-in-western-canada"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="11/10/2017">11/10/2017</time> <h3 class="c-article_nav_heading">Borea Construction awarded the largest solar power project in Western Canada</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/57/the-2017-pomerleau-challenge-successfully-completed"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="03/10/2017">03/10/2017</time> <h3 class="c-article_nav_heading">The 2017 Pomerleau Challenge successfully completed! </h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/56/official-ground-breaking-of-all-seniors-care-s-future-fox-hollow-retirement-residence-in-london-ontario"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="29/09/2017">29/09/2017</time> <h3 class="c-article_nav_heading">Official ground breaking of All Seniors Care's future Fox Hollow Retirement Residence in London, Ontario</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/55/pomerleau-becomes-the-first-general-contractor-awarded-canbim-company-certification"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="21/09/2017">21/09/2017</time> <h3 class="c-article_nav_heading">Pomerleau becomes the first general contractor awarded CanBIM Company Certification</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/54/pomerleau-proudly-delivers-place-bell-ahead-of-schedule-and-under-budget"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="01/09/2017">01/09/2017</time> <h3 class="c-article_nav_heading">Pomerleau proudly delivers Place Bell ahead of schedule and under budget</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/53/pomerleau-a-proud-sponsor-of-the-great-big-dig"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="16/08/2017">16/08/2017</time> <h3 class="c-article_nav_heading">Pomerleau a proud sponsor of The Great Big Dig</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/52/sept-ilesdetentioncentreachieves-certification-that-recognizes-sustainable-development-requirements"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="01/08/2017">01/08/2017</time> <h3 class="c-article_nav_heading">Sept-Îles&nbsp;Detention&nbsp;Centre&nbsp;achieves certification that recognizes sustainable development requirements</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/51/pomerleau-partners-on-innovation-to-enhance-the-canadian-construction-industry"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="18/07/2017">18/07/2017</time> <h3 class="c-article_nav_heading">Pomerleau partners on innovation to enhance the Canadian construction industry</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/50/pomerleaus-efforts-ensure-fairmont-the-queen-elizabeth-reopens-its-doors-on-time"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="11/07/2017">11/07/2017</time> <h3 class="c-article_nav_heading">Pomerleau’s efforts ensure Fairmont The Queen Elizabeth reopens its doors on time</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/49/a-vip-event-at-the-canadian-museum-of-history"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="16/06/2017">16/06/2017</time> <h3 class="c-article_nav_heading">A VIP event at the Canadian Museum of History</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/48/pomerleau-creates-app-for-immersive-experience"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="25/05/2017">25/05/2017</time> <h3 class="c-article_nav_heading">Pomerleau creates app for immersive experience</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/47/polytechnique-inaugurates-the-pomerleau-industrial-research-chair"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="17/05/2017">17/05/2017</time> <h3 class="c-article_nav_heading">Polytechnique inaugurates the Pomerleau Industrial Research Chair</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/46/the-sorel-tracy-detention-centre-exceeds-expectations"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="11/05/2017">11/05/2017</time> <h3 class="c-article_nav_heading">The Sorel-Tracy Detention Centre exceeds expectations</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/45/sean-strickland-joins-the-pomerleau-toronto-office-as-director-of-business-development"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="25/04/2017">25/04/2017</time> <h3 class="c-article_nav_heading">Sean Strickland joins the Pomerleau Toronto office as Director of Business Development</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/44/pomerleau-successfully-audited-for-its-transition-to-the-iso-9001-2015-standard"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="13/04/2017">13/04/2017</time> <h3 class="c-article_nav_heading">Pomerleau successfully audited for its transition to the ISO 9001: 2015 standard</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/43/pomerleau-launches-new-vision-and-values"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="21/03/2017">21/03/2017</time> <h3 class="c-article_nav_heading">Pomerleau launches new vision and values</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/42/new-sept-iles-detention-centre-officially-opens"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="16/03/2017">16/03/2017</time> <h3 class="c-article_nav_heading">New Sept-Îles detention centre officially opens</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/41/pomerleau-recognised-for-generous-contribution-to-muhc"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="03/03/2017">03/03/2017</time> <h3 class="c-article_nav_heading">Pomerleau recognised for generous contribution to MUHC</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/40/the-2017-big-picture-gala-a-broadway-inspired-evening"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="27/02/2017">27/02/2017</time> <h3 class="c-article_nav_heading">The 2017 Big Picture Gala - A Broadway-inspired evening</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/39/a-donation-to-the-iwk-foundation"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="24/02/2017">24/02/2017</time> <h3 class="c-article_nav_heading">A donation to the IWK Foundation</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/38/pomerleau-in-the-top-100-projects-key-players-and-owners"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="23/02/2017">23/02/2017</time> <h3 class="c-article_nav_heading">Pomerleau in the Top 100 Projects Key Players and Owners</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/37/pomerleau-helps-unveil-the-2017-winter-stations-in-toronto"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="22/02/2017">22/02/2017</time> <h3 class="c-article_nav_heading">Pomerleau helps unveil the 2017 Winter Stations in Toronto</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/36/pomerleau-sponsors-an-international-design-competition"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="17/02/2017">17/02/2017</time> <h3 class="c-article_nav_heading">Pomerleau sponsors an international design competition</h3></span></a></li><li class="c-article_nav_item"><a class="c-article_nav_link " href="en/news/33/pomerleau-awarded-bridge-replacement-contract-near-kingston"><span class="c-article_nav_content"><time class="c-article_nav_time" datetime="08/02/2017">08/02/2017</time> <h3 class="c-article_nav_heading">Pomerleau awarded bridge replacement contract near Kingston</h3></span></a></li></ul>
-                </div>
-            </article>
-            <aside class="scrollbar-track scrollbar-track-x" style="display: none;">
-                <div class="scrollbar-thumb scrollbar-thumb-x" style="width: 360px; transform: translate3d(0px, 0px, 0px);"></div>
-            </aside>
-            <aside class="scrollbar-track scrollbar-track-y" style="display: block;">
-                <div class="scrollbar-thumb scrollbar-thumb-y" style="height: 20px; transform: translate3d(0px, 0px, 0px);"></div>
-            </aside>
-            <canvas class="overscroll-glow" style="display: none; pointer-events: none;"></canvas>
-        </nav-->
-
-        <div class="aside-nav">
-            <ul>
-                <li><a class="menu-21" href="#">О компании</a></li>
-                <li><a class="menu-22" href="#">Здоровье</a></li>
-                <li><a class="menu-23" href="#">Косметика</a></li>
-                <li><a class="menu-24" href="#">Похудение</a></li>
-                <li><a class="menu-25" href="#">Партнерам</a></li>
-                <li><a class="menu-26" href="#">События</a></li>
-                <li><a class="menu-27" href="#">Обучение</a></li>
-                <li><a class="menu-28" href="#">Вопросы</a></li>
-                <li><a class="menu-29" href="#">Контакты</a></li>
-            </ul>
         </div>
-        <div class="o-scroll o-scroll-aside" data-module="SmoothScrolling" data-scrollbar>
-            <div class="o-wrap">
+    </div>
+    <div id="content">
 
 
 
@@ -261,190 +216,213 @@
                         <div class="mainslider__item">
                             <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide1.jpg')"></div>
                             <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><br /><!--Корейская косметика--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-													<span class="o-hsub_label">
-                                                    <br /><br />
-                                                    </span>
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
                                         </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
+                                        <div class="mainslider__controls">
                                             <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
                                                 <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-															<span class="o-button_label">
-																<svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-															</span>
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
                                                 </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-															<span class="o-button_label">
-																<svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-															</span>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mainslider__item">
-                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
-                            <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><br /><!--Про косметику--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-													<span class="o-hsub_label">
-                                                    <br /><br /><br />
-                                                    </span>
-                                        </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
-                                            <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
-                                                <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-															<span class="o-button_label">
-																<svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-															</span>
-                                                </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-															<span class="o-button_label">
-																<svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-															</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                     </div>
+
                     <div>
                         <div class="mainslider__item">
                             <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
                             <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><br /><!--Про косметику--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-                                                    <span class="o-hsub_label">
-                                                    <br />
-                                                    <br />
-                                                    <br />
-                                                    </span>
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика 2 слайд
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
                                         </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
+                                        <div class="mainslider__controls">
                                             <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
                                                 <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-                                                            </span>
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
                                                 </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-                                                            </span>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
+
                     <div>
                         <div class="mainslider__item">
-                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
+                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide1.jpg')"></div>
                             <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><br /><!--Про косметику--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-                                                    <span class="o-hsub_label">
-                                                        <br /><br /><br /><br />
-                                                    </span>
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика 3 слайд
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
                                         </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
+                                        <div class="mainslider__controls">
                                             <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
                                                 <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-                                                            </span>
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
                                                 </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-                                                            </span>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
+
                     <div>
                         <div class="mainslider__item">
                             <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
                             <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><br/><!--Про косметику--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-                                                    <span class="o-hsub_label">
-                                                    <br/><br/><br/><br/>
-                                                    </span>
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика 4 слайд
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
                                         </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
+                                        <div class="mainslider__controls">
                                             <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
                                                 <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-                                                            </span>
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
                                                 </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-                                                            </span>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
+
                     <div>
                         <div class="mainslider__item">
-                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
+                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide1.jpg')"></div>
                             <div class="c-header-home_text-load">
-                                <div class="c-header-home_text">
-                                    <div class="c-header-home_container o-container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                                        <div class="c-header-home_heading -full"><!--Про косметику--></div>
-                                        <a class="c-header-home_subheading -load o-hsub -link" href="#">
-                                            <span class="o-hsub_label"><!--текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику текст про косметику--></span>
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика 5 слайд
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
                                         </a>
-                                        <div class="c-header-home_controls -nomobile o-button-group">
+                                        <div class="mainslider__controls">
                                             <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
                                                 <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
-                                                            </span>
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
                                                 </button>
-                                                <button class="o-button -square mainslider-button slick__next slick-next slick-arrow" type="button">
-                                                            <span class="o-button_label">
-                                                                <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
-                                                            </span>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="mainslider__item">
+                            <div class="mainslider__image-box" style="background-image: url('/assets/images/slider/slide2.jpg')"></div>
+                            <div class="c-header-home_text-load">
+                                <div class="mainslider__wrap container js-parallax">
+                                    <div class="mainslider__text">
+                                        <div class="mainslider__header">
+                                            Косметика 6 слайд
+                                        </div>
+                                        <a class="mainslider__label" href="#">
+                                            <span class="o-hsub_label">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                            </span>
+                                        </a>
+                                        <div class="mainslider__controls">
+                                            <div class="js-parallax is-inview" data-speed="1" data-position="top" data-target="#js-header" style="transform: translate3d(0px, -15.15px, 0px);">
+                                                <button class="o-button -white -square -left mainslider-button slick__prev" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-prev"/></svg>
+                                                    </span>
+                                                </button>
+                                                <button class="o-button -white -square mainslider-button slick__next slick-arrow" type="button">
+                                                    <span class="o-button_label">
+                                                        <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-next"/></svg>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -456,13 +434,13 @@
                 <div class="o-wrap previewer__wrapper">
                     <div class="previewer">
                         <div class="previewer__item">
-                            <img src="/assets/images/preview/logo-1.png" alt="">
+                            <img src="/assets/template/img/preview/logo-1.jpg" alt="">
                         </div>
                         <div class="previewer__item">
-                            <img src="/assets/images/preview/logo-2.png" alt="">
+                            <img src="/assets/template/img/preview/logo-2.jpg" alt="">
                         </div>
                         <div class="previewer__item">
-                            <img src="/assets/images/preview/logo-3.png" alt="">
+                            <img src="/assets/template/img/preview/logo-3.jpg" alt="">
                         </div>
                         <div class="previewer__item">
                             <img src="http://placehold.it/144x78" alt="">
@@ -628,7 +606,7 @@
                                                     <br /><br /><br /><!--Текст про похудение текст про похудение текст про похудение текст про похудение текст про похудение. Текст про похудение текст про похудение текст про похудение текст про похудение текст про похудение.-->
                                                 </div>
                                                 <div class="category__action">
-                                                    <a class="o-button o-button-white -width -anim js-parallax  js-debug is-inview" href="#">
+                                                    <a class="o-button o-button-white -width -anim js-parallax  js-debug is-inview" href="/losingweight.html">
                                                         <span class="o-button_label">Подробнее</span>
                                                         <div class="o-button_line"></div>
                                                         <div class="o-button_line"></div>
@@ -637,8 +615,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="columns category__health js-parallax">
+                                    <div class="row category__group">
+                                        <div class="columns category__health wow js-parallax">
                                             <div class="category-small" style="background-image: url('/assets/images/category__health.jpg')">
                                                 <a class="category__link" href="#">
                                                     <div class="category__name">Здоровье</div>
@@ -650,17 +628,18 @@
                                                         <br /><br /><br /><!--Текст про здоровье текст про здоровье текст про здоровье текст про здоровье. Текст про здоровье текст про здоровье текст про здоровье текст про здоровье.-->
                                                     </div>
                                                     <div class="col-md-5">
-
-                                                        <a class="grand-button" href="#">
-                                                            <span class="grand-button_label">Подробнее</span>
-                                                        </a>
+                                                        <div class="category__button">
+                                                            <a class="grand-button" href="#">
+                                                                <span class="grand-button_label">Подробнее</span>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 category__cosmetic js-parallax">
+                                        <div class="columns category__cosmetic wow js-parallax">
                                             <div class="category-small " style="background-image: url('/assets/images/category__cosmetics.jpg')">
-                                                <a class="category__link" href="#">
+                                                <a class="category__link" href="/cosmetics.html">
                                                     <div class="category__name">Косметика</div>
                                                 </a>
                                             </div>
@@ -670,10 +649,11 @@
                                                         <br /><br /><br /><!-- Текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст. -->
                                                     </div>
                                                     <div class="col-md-5">
-
-                                                        <a class="grand-button" href="#">
-                                                            <span class="grand-button_label">Подробнее</span>
-                                                        </a>
+                                                        <div class="category__button">
+                                                            <a class="grand-button" href="/cosmetics.html"">
+                                                                <span class="grand-button_label">Подробнее</span>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -688,7 +668,7 @@
                         <div class="o-container-about">
                             <!-- <div class="container"> -->
                             <div class="row">
-                                <div class="about-text col-sm-12 col-lg-5">
+                                <div class="columns about-text">
                                     <div class="about-text__box">
                                         <div class="header1">Информация о компании</div>
                                         <p>.<br />.<br />.<br />.</p>
@@ -696,14 +676,14 @@
                                     </div>
                                     <div class="about-menu">
                                         <ul>
-                                            <li><a href="#">О компании</a></li>
+                                            <li><a href="/about.html">О компании</a></li>
                                             <li><a href="#">Стать партнером</a></li>
-                                            <li><a href="#">Обучение</a></li>
-                                            <li><a href="#">Задать вопрос</a></li>
+                                            <li><a href="/training.html">Обучение</a></li>
+                                            <li><a href="/faq.html">Задать вопрос</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="about-logos col-sm-12 col-lg-7">
+                                <div class="columns about-logos">
                                     <div class="about__header">
                                         <img src="/assets/images/logo-diamond.png" alt="">
                                     </div>
@@ -879,16 +859,19 @@
 
 
 
+
+</div>
+</div>
 <footer class="c-footer">
     <div class="">
         <div class="row">
-            <div class="col-md-3">
+            <div class="c-footer__left columns">
                 <img class="bottom-logo" src="/assets/images/logo-white.png" alt="">
                 <div class="copyright">
                     Copyright 2017 · All rights reserved
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="c-footer__right columns">
                 <div class="footer__menu">
                     <ul>
                         <li><a href="#">О компании</a></li>
@@ -916,22 +899,7 @@
     </div>
 </footer>
 
-</div>
 
-</div>
-</div>
-</div>
-
-<div class="c-lightbox-video" data-module="LightboxVideo">
-    <div class="c-lightbox-video_container o-container">
-        <div class="o-video js-lightbox-video-content">
-
-        </div>
-    </div>
-    <button class="c-lightbox-video_close js-lightbox-video-close" type="button">
-        <svg class="c-lightbox-video_close_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#icon-close"></use></svg>
-    </button>
-</div>
 
 <div style="display: none">
     <div id="callback">
@@ -954,13 +922,11 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/pomerleau/scripts/jquery-3.0.0.min.js"><\/script>')</script>
-<script src="assets/pomerleau/scripts/vendors.js"></script>
-<script src="/js/slick/slick.min.js"></script>
-<script src="/js/magnific/magnific-popup.js"></script>
-
-
-<script src="assets/pomerleau/scripts/app.js%3Fv=1"></script>
-<script src="/js/custom.js"></script>
+<!-- <script src="assets/template/vendor/jquery-3.2.1.min.js"></script> -->
+<script src="assets/template/vendor/slick/slick.min.js"></script>
+<script src="assets/template/vendor/wow.min.js"></script>
+<script src="assets/template/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="assets/template/vendor/magnific/magnific-popup.js"></script>
+<script src="assets/template/js/scripts.js"></script>
 </body>
 </html>

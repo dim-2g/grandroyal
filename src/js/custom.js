@@ -85,7 +85,7 @@ $(function() {
               }
             }
           ]
-        });
+    });
 
     function setMarker(data, left=0, top=0) {
       $('.address__type').text('');
