@@ -1849,8 +1849,94 @@ p{
       border-top: 0 none;
     }
   }
+  &__faq-parent{
+    font-size: 34px;
+    padding-left: 75px;
+    .fly-menu__faq-name{
+      font-size: 24px;
+    }
+  }
+  &__faq-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    height: 100%;
+    a{
+      color: #fff;
+    }
+    .fly-menu__faq-parent .fly-menu__faq-list .fly-menu__faq-link{
+      paddin-left: 10px;
+    }
+  }
+  &__faq-health{
+    background-color: #76a9bc;
+  }
+  &__faq-weight{
+    background-color: #add56f;
+  }
+  &__faq-beauty{
+    background-color: #d57b6f;
+  }
 
+  &__faq-item{
+    //padding: 10px 0;
+    &:hover{
+      font-weight: 400;
+      > .fly-menu__faq-link{
+        background-color: #8fc9df;
+      }
+      .fly-menu__faq-name{
+        border-color: transparent;
+        text-decoration: none;
+      }
+      + .fly-menu__faq-item{
+        .fly-menu__faq-name{
+          border-color: transparent;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  //у активного элемента убираем границы
+  &__faq-item{
+    &.active{
+      .fly-menu__faq-link{
+        background-color: #8fc9df;
+      }
+      .fly-menu__faq-name{
+        border-color: transparent;
+      }
+      + .fly-menu__faq-item{
+        .fly-menu__faq-name{
+          border-color: transparent;
+        }
+      }
+    }
+  }
+  &__faq-name{
+    display: block;
+    margin: 0px 25px 0px 25px;
+    padding: 10px 0;
+    line-height: 120%;
+    font-weight: 300;
+    border-top: 1px solid #dadada;
+    font-size: 16px;
+    @media($bp-larger-than-desktop){
+      padding: 20px 0;
+      margin: 0px 12px 0px 36px;
+    }
+    @media($bp-larger-than-1400){
+
+    }
+  }
+  &__faq-link {
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+  }
 }
+
 .fly-menu-open{
   .fly-menu{
     transform: translateX(0);
