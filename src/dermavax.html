@@ -23,7 +23,7 @@
     <div class="c-nav_list-wrap o-scroll" data-scrollbar>
         <ul class="c-nav_list" data-module="Dropdown">
             <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                <a class="c-nav_link js-nav-link" href="/about.html" data-route="nav" data-route-option="via-nav">
                     <span class="c-nav_link_text">О компании</span>
                     <span class="c-nav_link_line"></span>
                 </a>
@@ -50,7 +50,7 @@
                 </div>
             </li>
             <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                <a class="c-nav_link js-nav-link" href="/partners.html" data-route="nav" data-route-option="via-nav">
                     <span class="c-nav_link_text">Партнерам</span>
                     <span class="c-nav_link_line"></span>
                 </a>
@@ -78,68 +78,7 @@
     <div class="c-nav_search" data-module="Search">
         <div class="o-scroll" data-scrollbar>
             <div class="c-search">
-                <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
-                <div class="c-search_results js-search-results">
-                    {{#displaySearchResults}}
 
-                    {{#hasProjects}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Projets <span class="c-search_number">({{projects.length}})</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#projects}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/projects}}
-                        </ul>
-                    </section>
-                    {{/hasProjects}}
-
-
-                    {{#hasNews}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Articles <span class="c-search_number">{{news.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#news}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/news}}
-                        </ul>
-                    </section>
-                    {{/hasNews}}
-
-                    {{#hasSections}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Pages <span class="c-search_number">{{sections.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#sections}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                    <div class="s-wysiwyg">
-                                        <p>{{description}}</p>
-                                    </div>
-                                </a>
-                            </li>
-                            {{/sections}}
-                        </ul>
-                    </section>
-                    {{/hasSections}}
-
-                    {{/displaySearchResults}}
-                </div>
             </div>
         </div>
     </div>
@@ -168,6 +107,7 @@
     <div class="logo">
         <a href="/">
             <img src="/assets/images/logo.png" alt="">
+
         </a>
     </div>
     <div class="c-header__contacts">
@@ -198,7 +138,7 @@
                     <li><a class="menu-22" href="#">Здоровье</a></li>
                     <li><a class="menu-23" href="/cosmetics.html">Косметика</a></li>
                     <li><a class="menu-24" href="/losingweight.html">Похудение</a></li>
-                    <li><a class="menu-25" href="#">Партнерам</a></li>
+                    <li><a class="menu-25" href="/partners.html">Партнерам</a></li>
                     <li><a class="menu-26" href="/events.html">События</a></li>
                     <li><a class="menu-27" href="/training.html">Обучение</a></li>
                     <li><a class="menu-28" href="/faq.html">Вопросы</a></li>

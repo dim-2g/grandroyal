@@ -284,6 +284,12 @@ $(function() {
         ]
     });
 
+    $('.fly-menu__toggle').click(function(){
+        $('.fly-menu__toggle').removeClass('open');
+        $(this).addClass('open');
+        return false;
+    })
+
 
 });
 
@@ -317,6 +323,7 @@ showFlyMenu = function(scroll){
     }else{
         $('body').removeClass('fly-menu-open');
     }
+
 }
 showFlyMenu(0);
 

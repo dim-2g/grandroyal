@@ -23,7 +23,7 @@
     <div class="c-nav_list-wrap o-scroll" data-scrollbar>
         <ul class="c-nav_list" data-module="Dropdown">
             <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                <a class="c-nav_link js-nav-link" href="/about.html" data-route="nav" data-route-option="via-nav">
                     <span class="c-nav_link_text">О компании</span>
                     <span class="c-nav_link_line"></span>
                 </a>
@@ -50,7 +50,7 @@
                 </div>
             </li>
             <li class="c-nav_item">
-                <a class="c-nav_link js-nav-link" href="#" data-route="nav" data-route-option="via-nav">
+                <a class="c-nav_link js-nav-link" href="/partners.html" data-route="nav" data-route-option="via-nav">
                     <span class="c-nav_link_text">Партнерам</span>
                     <span class="c-nav_link_line"></span>
                 </a>
@@ -78,68 +78,7 @@
     <div class="c-nav_search" data-module="Search">
         <div class="o-scroll" data-scrollbar>
             <div class="c-search">
-                <input class="c-search_input o-input -search js-search-input" type="text" name="keyword" placeholder="Recherche" value="{{keyword}}">
-                <div class="c-search_results js-search-results">
-                    {{#displaySearchResults}}
 
-                    {{#hasProjects}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Projets <span class="c-search_number">({{projects.length}})</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#projects}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/projects}}
-                        </ul>
-                    </section>
-                    {{/hasProjects}}
-
-
-                    {{#hasNews}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Articles <span class="c-search_number">{{news.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#news}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <time class="u-uppercase" datetime="{{dateTime}}">{{date}}</time>
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                </a>
-                            </li>
-                            {{/news}}
-                        </ul>
-                    </section>
-                    {{/hasNews}}
-
-                    {{#hasSections}}
-                    <section class="c-search_section">
-                        <h2 class="c-search_heading u-uppercase">
-                            Pages <span class="c-search_number">{{sections.length}}</span>
-                        </h2>
-                        <ul class="c-search_list">
-                            {{#sections}}
-                            <li class="c-search_item">
-                                <a class="c-search_link" href="#" data-route="nav" data-route-option="via-nav">
-                                    <h3 class="c-search_title">{{title}}</h3>
-                                    <div class="s-wysiwyg">
-                                        <p>{{description}}</p>
-                                    </div>
-                                </a>
-                            </li>
-                            {{/sections}}
-                        </ul>
-                    </section>
-                    {{/hasSections}}
-
-                    {{/displaySearchResults}}
-                </div>
             </div>
         </div>
     </div>
@@ -168,6 +107,7 @@
     <div class="logo">
         <a href="/">
             <img src="/assets/images/logo.png" alt="">
+
         </a>
     </div>
     <div class="c-header__contacts">
@@ -198,7 +138,7 @@
                     <li><a class="menu-22" href="#">Здоровье</a></li>
                     <li><a class="menu-23" href="/cosmetics.html">Косметика</a></li>
                     <li><a class="menu-24" href="/losingweight.html">Похудение</a></li>
-                    <li><a class="menu-25" href="#">Партнерам</a></li>
+                    <li><a class="menu-25" href="/partners.html">Партнерам</a></li>
                     <li><a class="menu-26" href="/events.html">События</a></li>
                     <li><a class="menu-27" href="/training.html">Обучение</a></li>
                     <li><a class="menu-28" href="/faq.html">Вопросы</a></li>
@@ -261,61 +201,28 @@
 
     <div class="fly-menu">
 
-        <ul class="fly-menu__faq-list">
-            <li class="fly-menu__faq-item first fly-menu__faq-health">
-                <a href="#" class="fly-menu__faq-link fly-menu__faq-parent">
-                    <div class="fly-menu__faq-name">
-                        Здоровье
-                    </div>
-                </a>
-                <ul class="fly-menu__faq-list">
-                    <li class="fly-menu__faq-item first fly-menu__faq-health">
-                        <a href="#" class="fly-menu__faq-link">
-                            <div class="fly-menu__faq-name">
-                                Как называется компания? Выразите пожелания относительно логотипа.
-                            </div>
-                        </a>
-                    </li>
-                    <li class="fly-menu__faq-item first fly-menu__faq-health">
-                        <a href="#" class="fly-menu__faq-link">
-                            <div class="fly-menu__faq-name">
-                                Имеется ли продуктовая фотосессия(если нет, то она необходима). Фотосессия каждого продукта представленного на сайте
-                            </div>
-                        </a>
-                    </li>
-                    <li class="fly-menu__faq-item first fly-menu__faq-health">
-                        <a href="#" class="fly-menu__faq-link">
-                            <div class="fly-menu__faq-name">
-                                Какие преимущества получает новый партнер (дистрибьютор) от сотрудничества?
-                            </div>
-                        </a>
-                    </li>
-                    <li class="fly-menu__faq-item first fly-menu__faq-health">
-                        <a href="#" class="fly-menu__faq-link">
-                            <div class="fly-menu__faq-name">
-                                Есть ли сейчас действующие партнеры?
-                            </div>
-                        </a>
-                    </li>
+        <ul class="faq-menu">
+            <li class="faq-menu--health open fly-menu__toggle"><a href="#">Здоровье</a>
+                <ul>
+                    <li><a href="#">Как называется компания? Выразите пожелания относительно логотипа.</a></li>
+                    <li><a href="#">Имеется ли продуктовая фотосессия(если нет, то она необходима). Фотосессия каждого продукта представленного на сайте</a></li>
+                    <li><a href="#">Какие преимущества получает новый партнер (дистрибьютор) от сотрудничества?</a></li>
                 </ul>
             </li>
-            <li class="fly-menu__faq-item first fly-menu__faq-weight">
-                <a href="#" class="fly-menu__faq-link fly-menu__faq-parent">
-                    <div class="fly-menu__faq-name">
-                        Похудение
-                    </div>
-                </a>
+            <li class="faq-menu--weight fly-menu__toggle">
+                <a href="#">Похудение</a>
+                <ul>
+                    <li><a href="#">Как называется компания? Выразите пожелания относительно логотипа.</a></li>
+                    <li><a href="#">Имеется ли продуктовая фотосессия(если нет, то она необходима). Фотосессия каждого продукта представленного на сайте</a></li>
+                    <li><a href="#">Какие преимущества получает новый партнер (дистрибьютор) от сотрудничества?</a></li>
+                </ul>
             </li>
-            <li class="fly-menu__faq-item first fly-menu__faq-beauty">
-                <a href="#" class="fly-menu__faq-link fly-menu__faq-parent">
-                    <div class="fly-menu__faq-name">
-                        Косметика
-                    </div>
-                </a>
+            <li class="faq-menu--beauty fly-menu__toggle">
+                <a href="#">Косметика</a>
+                <ul>
+                    <li><a href="#">Как называется компания? Выразите пожелания относительно логотипа.</a></li>
+                </ul>
             </li>
-
-
-
         </ul>
     </div>
 
