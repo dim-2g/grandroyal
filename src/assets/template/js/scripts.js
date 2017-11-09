@@ -290,6 +290,22 @@ $(function() {
         return false;
     })
 
+    $('.product-photos__main img').magnificPopup({
+        //delegate: 'img', // the selector for gallery item
+        type: 'image',
+        gallery: {
+            enabled:true
+        },
+        mainClass: 'product-popup',
+        closeBtnInside: true,
+        callbacks: {
+            open: function() {
+                var arrows = $('.mfp-arrow').detach();
+                arrows.appendTo($('.mfp-content'));
+            },
+        }
+    });
+
 
 });
 
@@ -404,4 +420,5 @@ function setMarker(data, left=0, top=0) {
     }
     $('.marker-info').addClass('marker-info--active');
 }
+
 

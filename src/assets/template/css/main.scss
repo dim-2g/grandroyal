@@ -2597,6 +2597,11 @@ h2,
     &__main{
       margin-bottom: 20px;
       border: 1px solid #e0e0e0;
+      img{
+        &:hover{
+          cursor: pointer;
+        }
+      }
     }
     &__preview{
       margin-left: -2px;
@@ -3765,4 +3770,32 @@ text-rendering: auto;
     }
   }
 
+}
+
+.product-popup{
+  .mfp-figure{
+    background-color: #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .mfp-counter{
+    right: 20px;
+  }
+  .mfp-image-holder{
+    .mfp-close{
+      color: transparent;
+      width: 31px;
+      height: 31px;
+      top: 30px;
+      right: 30px;
+      &:before{
+        content: "";
+        display: inline-block;
+        @include sprite($product-popup-close);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+  }
 }
