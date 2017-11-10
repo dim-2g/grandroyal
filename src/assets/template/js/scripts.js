@@ -294,14 +294,20 @@ $(function() {
         //delegate: 'img', // the selector for gallery item
         type: 'image',
         gallery: {
-            enabled:true
+            enabled:true,
+            arrowMarkup2: '<button rel="111" title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+            arrowMarkup: '<button class="o-button -white -square mfp-arrow-%dir% mfp-arrow-new" type="button">\n' +
+            '                <span class="o-button_label">\n' +
+            '                   <svg class="o-button_icon" role="img"><use xlink:href="assets/pomerleau/images/sprite.svg#arrow-%dir%"/></svg>\n' +
+            '                </span>\n' +
+            '             </button>'
         },
         mainClass: 'product-popup',
         closeBtnInside: true,
         callbacks: {
             open: function() {
-                var arrows = $('.mfp-arrow').detach();
-                arrows.appendTo($('.mfp-content'));
+                var arrows = $('.product-popup .mfp-arrow-new').detach();
+                arrows.appendTo($('.product-popup .mfp-content'));
             },
         }
     });
