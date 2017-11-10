@@ -3837,3 +3837,55 @@ text-rendering: auto;
     right: 20px;
   }
 }
+
+.results{
+  &__list{
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  &__card{
+    max-width: 294px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__item{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    @media($bp-larger-than-phablet){
+      width: 50%;
+    }
+    @media($bp-larger-than-1400){
+      width: 25%;
+    }
+  }
+  &__image{
+    height: 172px;
+    width: 172px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+  }
+  &__left{
+    width: 50%;
+  }
+  &__right{
+    width: 50%;
+  }
+  &__value{
+    text-align: center;
+    font-weight: bold;
+    color: $blue;
+    font-size: 36px;
+  }
+  &__label{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
