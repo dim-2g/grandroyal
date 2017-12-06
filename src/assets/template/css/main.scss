@@ -1316,11 +1316,11 @@ p{
   &__header {
     background: transparent url('/assets/template/img/contacts/header__bg.jpg') center top no-repeat;
     background-size: cover;
-    height: 600px;
+    min-height: 600px;
     padding: 164px 0 120px 0px;
     position: relative;
     @media($bp-larger-than-1500){
-      height: 789px;
+      min-height: 789px;
     }
     &:before {
       position: absolute;
@@ -3887,5 +3887,26 @@ text-rendering: auto;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
+  }
+}
+
+.carusel__item .popup-product{
+  display: none;
+}
+
+.popup-product {
+  max-width: 1000px;
+  background: #fff;
+  color: #424242;
+  padding: 40px;
+  margin: 0 auto;
+  position: relative;
+  &__image{
+    width: 50%;
+    padding-right: 15px;
+  }
+  &__descr{
+    width: 50%;
+    padding-left: 15px;
   }
 }
